@@ -4,7 +4,7 @@ import os, requests
 # Creando una constante con la dirección de la API Ghibli
 URL_FILMS = "https://ghibliapi.herokuapp.com/films/"
 
-# Creando constantes de titulos e información
+# Creando constantes de títulos e información
 LOGO = """\t _______ _     _ _     _  _ 
 \t(_______) |   (_) |   | |(_)
 \t _   ___| |__  _| |__ | | _ 
@@ -13,7 +13,7 @@ LOGO = """\t _______ _     _ _     _  _
 \t \_____/|_| |_|_|____/ \_)_|
 """
 
-INFO = """[Info] Programa creado con Python3 y la API de Ghibli para ver información de peliculas de Estudio Ghibli
+INFO = """[Info] Programa creado con Python3 y la API de Ghibli para ver información de películas de Estudio Ghibli
 [Info] Creado por __Rodion__ (https://github.com/RodionButEncapsulated)\n"""
 
 # Creando función para limpiar la pantalla
@@ -29,7 +29,7 @@ def check_films():
         print(i, data_films[i]["title"])
     return data_films
 
-# Creando función para mostrar la información de la pelicula elegida a través de un indice (choice)
+# Creando función para mostrar la información de la película elegida a través de un indice (choice)
 def choice_film(choice):
     code = data_films[choice]["id"]
     url_choice = f"{URL_FILMS}/{code}"
@@ -54,13 +54,13 @@ while True:
     print(INFO)
     data_films = check_films()
     choice = input("\n[?] Ingrese el indice que desea abrir: ")
-    # Sí la entrada es "Exit" finaliza el scrip
+    # Sí la entrada es "Exit" finaliza el script
     if choice == "exit":
         break
-    # Si la entrada es numerica, convierte el valor a un número entero y continúa con el scrip.
+    # Si la entrada es numérica, convierte el valor a un número entero y continúa con el script.
     elif choice.isnumeric():
         choice = int(choice)
-    # Sí la entrada es un caracter no numerico, muestra un error en pantalla y finaliza el scrip.
+    # Sí la entrada es un carácter no numérico, muestra un error en pantalla y finaliza el script.
     else:
         print("[!] Error, ingrese solo números.")
         break
